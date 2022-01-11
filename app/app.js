@@ -54,8 +54,8 @@ const recreateOutputsDir = () => {
     fs.rmdirSync(dir.outputs, { recursive: true });
   }
   fs.mkdirSync(dir.outputs);
-  fs.mkdirSync(`${dir.outputs}/metadata`);
-  fs.mkdirSync(`${dir.outputs}/punks`);
+  fs.mkdirSync(`${dir.outputs}/ugly-metadata`);
+  fs.mkdirSync(`${dir.outputs}/ugly-childs`);
 };
 
 const allPossibleCases = (arraysToCombine, max) => {
@@ -112,9 +112,9 @@ const drawImage = async (traitTypes, background, index) => {
 
   // save metadata
   fs.writeFileSync(
-    `${dir.outputs}/metadata/${index + 1}.json`,
+    `${dir.outputs}/ugly-metadata/${index + 1}.json`,
     JSON.stringify({
-      name: `punk ${index}`,
+      name: `ugly-childs ${index}`,
       attributes: drawableTraits,
     }),
     function (err) {
@@ -124,7 +124,7 @@ const drawImage = async (traitTypes, background, index) => {
 
   // save image
   fs.writeFileSync(
-    `${dir.outputs}/punks/${index + 1}.png`,
+    `${dir.outputs}/ugly-childs/${index + 1}.png`,
     canvas.toBuffer("image/png")
   );
 };
