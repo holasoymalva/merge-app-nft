@@ -3,8 +3,8 @@ const { createCanvas, loadImage } = require("canvas");
 const console = require("console");
 
 const imageFormat = {
-  width: 24,
-  height: 24,
+  width: 1200,
+  height: 1800,
 };
 
 const dir = {
